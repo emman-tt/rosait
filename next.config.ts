@@ -2,19 +2,22 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   /* config options here */
-  experimental: {
-    agentFeedback: true,
+  images: {
+    remotePatterns: [
+      { protocol: "https", hostname: "perfumegh.com" },
+    ],
   },
-  cacheComponents: true,
-  partialPrefetching: true,
-  turbopack: {
-    rules: {
-      "*.css": {
-        loaders: ["@tailwindcss/turbopack"],
-        as: "*.css",
+  async redirects() {
+    return [
+      // "/" is not a designed route on this site — send visitors to "/home".
+      {
+        source: "/",
+        destination: "/home",
+        permanent: false,
       },
-    },
+    ];
   },
+
 };
 
 export default nextConfig;
