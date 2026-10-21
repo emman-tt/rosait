@@ -30,6 +30,7 @@ jobs:
             ghcr.io/${{ github.repository }}:latest
             ghcr.io/${{ github.repository }}:${{ github.sha }}
   deploy:
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: SSH into vm and deploy
