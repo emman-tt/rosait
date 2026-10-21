@@ -3,10 +3,9 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   /* config options here */
   images: {
-    remotePatterns: [
-      { protocol: "https", hostname: "perfumegh.com" },
-    ],
+    remotePatterns: [{ protocol: "https", hostname: "perfumegh.com" }],
   },
+  output: "standalone",
   async redirects() {
     return [
       // "/" is not a designed route on this site — send visitors to "/home".
@@ -17,7 +16,6 @@ const nextConfig: NextConfig = {
       },
     ];
   },
-
 };
 
 export default nextConfig;
