@@ -37,6 +37,7 @@ jobs:
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USER }}
+          port: 22
           key: ${{ secrets.KEY }}
           script: |
             docker pull ghcr.io/${{ github.repository }}:latest \
