@@ -41,9 +41,9 @@ jobs:
           port: 22
           key: ${{ secrets.KEY }}
           script: |
-            docker pull ghcr.io/${{ github.repository }}:latest \
-            docker stop rosait || true \
-            docker rm rosait  || true \
-            docker run -d -p 127.0.0.1:3005:30005 \
+            docker pull ghcr.io/${{ github.repository }}:latest 
+            docker stop rosait || true 
+            docker rm rosait  || true 
+            docker run -d -p 127.0.0.1:3005:3005 \
             --restart unless-stopped \
-            --name rosait ghcr.io/${{ github.repository }}:latest \
+            --name rosait ghcr.io/${{ github.repository }}:latest 

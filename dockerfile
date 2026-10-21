@@ -37,7 +37,7 @@ FROM node:lts-alpine
 WORKDIR /app
 
 ENV NODE_ENV=production
-ENV PORT=3001
+ENV PORT=3005
 ENV HOSTNAME="0.0.0.0"
 
 # 1. Copy public folder (images, fonts)
@@ -56,5 +56,6 @@ COPY --from=builder --chown=node:node /app/.next/static ./.next/static
 USER node
 
 USER node
+EXPOSE 3005
 CMD ["node", "server.js"]
 
