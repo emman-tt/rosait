@@ -1,12 +1,13 @@
 #Install pnpm dependencies 
 FROM node:lts-alpine AS dependencer
 
-RUN corepack enable
+RUN corepack enable 
 
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
 
 WORKDIR /app
+
 
 # Copy package-related files first to leverage Docker's caching mechanism
 COPY package.json  pnpm-lock.yaml* pnpm-workspace.yaml* .npmrc* ./

@@ -224,7 +224,7 @@ export default function Selling() {
                         <div ref={mainImageRef} className="absolute inset-0" key={active}>
                             <video
                                 ref={videoRef}
-                                src="videos/perfume.mp4"
+                                src="https://media.emmanverse.uk/perfume.mp4"
                                 autoPlay
                                 muted
                                 loop

@@ -212,8 +212,9 @@ export default function Hero() {
                 <div className="relative my-1 flex items-center justify-center">
                     <div ref={stripRef} className="h-[clamp(6rem,15vw,10rem)] w-[min(88vw,660px)] overflow-hidden">
                         <video
+                        
                             className="h-full w-full object-cover"
-                            src="/videos/hero.mp4"
+                            src="https://media.emmanverse.uk/hero.mp4"
                             autoPlay
                             muted
                             loop
