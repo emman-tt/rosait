@@ -60,7 +60,7 @@ jobs:
           username: ${{ secrets.USER }}
           port: 22
           key: ${{ secrets.KEY }}
-          envs: APP_NAME
+          envs: APP_NAME, HOST_PORT ,CONTAINER_PORT
           script: |
             docker pull ghcr.io/${{ github.repository }}:latest 
             docker stop $APP_NAME || true 
