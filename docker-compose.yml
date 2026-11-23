@@ -1,0 +1,13 @@
+services:
+  rosait:
+    image: ghcr.io/emman-tt/rosait:latest 
+    container_name: rosait
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:3005:3000"
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost/"]
+      interval: 1m30s
+      timeout: 30s
+      retries: 5
+      start_period: 30s
