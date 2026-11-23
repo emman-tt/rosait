@@ -18,6 +18,8 @@ RUN --mount=type=cache,target=/root/.local/share/pnpm/store \
 # ---------- Stage 2: builder ----------
 FROM node:24-alpine AS builder
 
+RUN npm install -g pnpm@11.9.0
+
 WORKDIR /app
 
 COPY --from=dependencer /app/node_modules ./node_modules
